@@ -988,6 +988,14 @@ body {
 }
 
 @media (max-height: 600px) {
+    .postulates {
+        min-height: 150vh;
+    }
+
+    .postulates__container {
+        height: 150vh;
+    }
+
     .postulates__list-item {
         font-size: 30px;
         line-height: 30px;

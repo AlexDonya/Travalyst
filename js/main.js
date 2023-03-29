@@ -149,56 +149,23 @@ listItems.forEach((item, indexDot) => {
     item.addEventListener('mouseenter', () => {
         index = indexDot;
         prepareCurrentItem(index);
-    })
+    });
+    item.addEventListener('click', () => {
+        index = indexDot;
+        prepareCurrentItem(index);
+    });
 });
-
+// 'mouseenter',
 numberItems.forEach((item, indexDot) => {
     item.addEventListener('mouseenter', () => {
         index = indexDot;
         prepareCurrentItem(index);
-    })
+    });
+    item.addEventListener('click', () => {
+        index = indexDot;
+        prepareCurrentItem(index);
+    });
 });
-
-// postBckgImgs.forEach((item, indexDot) => {
-//     item.addEventListener('mouseenter', () => {
-//         index = indexDot;
-//         prepareCurrentItem(index);
-//     })
-// });
-
-// postParagraphs.forEach((item, indexDot) => {
-//     item.addEventListener( () => {
-//         index = indexDot;
-//         prepareCurrentItem(index);
-//     })
-// });
-
-// _______________________________________________________________________________________________
-
-// function getBackgroundImageOne() {
-//     document.querySelector('.postulates__background-image').style.background = "url('img/main/6th-section-postulates/elephants.png')";
-//     document.querySelector('.postulates__background-image').style.backgroundSize = 'cover';
-//     document.querySelector('.postulates__background-image').style.backgroundRepeat = 'no-repeat';
-//     document.querySelector('.postulates__background-image').style.backgroundPosition = 'center';
-// };
-// function getBackgroundImageTwo() {
-//     document.querySelector('.postulates__background-image').style.background = "url('img/main/6th-section-postulates/nature-underwater.png')";
-//     document.querySelector('.postulates__background-image').style.backgroundSize = 'cover';
-//     document.querySelector('.postulates__background-image').style.backgroundRepeat = 'no-repeat';
-//     document.querySelector('.postulates__background-image').style.backgroundPosition = 'center';
-// };
-// function getBackgroundImageThree() {
-//     document.querySelector('.postulates__background-image').style.background = "url('img/main/6th-section-postulates/house-on-the-mountain.png')";
-//     document.querySelector('.postulates__background-image').style.backgroundSize = 'cover';
-//     document.querySelector('.postulates__background-image').style.backgroundRepeat = 'no-repeat';
-//     document.querySelector('.postulates__background-image').style.backgroundPosition = 'center';
-// };
-// function getBackgroundImageFour() {
-//     document.querySelector('.postulates__background-image').style.background = "url('img/main/6th-section-postulates/blue-sky-and-mountains.png')";
-//     document.querySelector('.postulates__background-image').style.backgroundSize = 'cover';
-//     document.querySelector('.postulates__background-image').style.backgroundRepeat = 'no-repeat';
-//     document.querySelector('.postulates__background-image').style.backgroundPosition = 'center';
-// };
 
 
 // section partnership-rules
