@@ -175,7 +175,7 @@ body {
 
 .travel-companies-slider__slide .travel-companies-slider__image {
     opacity: 0.1;
-    transition: all 0.5s ease-out;
+    transition: all 0.5s ease 0s;
 }
 
 .swiper-slide-prev .travel-companies-slider__image,
@@ -281,7 +281,7 @@ body {
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 42px;
     cursor: pointer;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease 0s;
 }
 
 .button-next {
@@ -293,7 +293,7 @@ body {
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 42px;
     cursor: pointer;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease 0s;
 }
 
 .button-prev:hover {
@@ -316,13 +316,13 @@ body {
 
 .swiper-slide-active .founders-slider__image {
     transform: scale(2.15);
-    transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease 0s;
     top: 5px;
     padding-top: 10px;
 }
 
 .swiper-slide .founders-slider__image {
-    transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease 0s;
 }
 
 .founders-slider__image {
@@ -342,7 +342,7 @@ body {
 .swiper-slide-active .founders-slider__text {
     visibility: visible;
     opacity: 1;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease 0s;
 }
 
 @media (max-width: 991.98px) {
@@ -433,7 +433,7 @@ body {
     font-size: 42px;
     line-height: 46px;
     color: #FFFFFF;
-    transition: all 0.5s ease-out;
+    transition: all 0.5s ease 0s;
 }
 
 .frameworks-slider__slide:hover .frameworks-slider__text h5 {
@@ -448,7 +448,7 @@ body {
     font-size: 18px;
     line-height: 28px;
     color: transparent;
-    transition: all 0.5s ease-out;
+    transition: all 0.5s ease 0s;
 }
 
 .frameworks-slider__slide:hover .frameworks-slider__text p {
@@ -456,7 +456,7 @@ body {
 }
 
 .frameworks-slider__image img {
-    transition: all 0.5s ease-out;
+    transition: all 0.5s ease 0s;
 }
 
 .frameworks-slider__slide:hover .frameworks-slider__image img {
@@ -476,7 +476,7 @@ body {
     background-position: center;
     border-radius: 42px;
     background-color: rgb(255, 255, 255);
-    transition: all 0.5s ease-out;
+    transition: all 0.5s ease 0s;
     opacity: 0;
 }
 
@@ -487,7 +487,7 @@ body {
 .swiper-slide .frameworks-slider__link {
     pointer-events: none;
     opacity: 0.5;
-    transition: 0.5s;
+    transition: all 0.5s ease 0s;
 }
 
 .swiper-slide-active .frameworks-slider__link,
@@ -729,7 +729,7 @@ body {
     border-radius: 16px;
     margin: 0px 20px 0px 0px;
     cursor: pointer;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease 0s;
 }
 
 .sustainably__star:hover {
@@ -745,7 +745,7 @@ body {
     right: 15px;
     background: #0D231F;
     border-radius: 15px;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease 0s;
     opacity: 0;
     z-index: 2;
 }
@@ -826,12 +826,44 @@ body {
     min-width: 100%;
     min-height: 100%;
     border-radius: 15px;
-    background-image: url(../img/main/6th-section-postulates/elephants.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    transition: all 0.5s ease-in;
+    transition: all 0.5s ease 0.1s;
     z-index: -1;
+    opacity: 0;
+}
+
+.postulates__background-image.one {
+    background-image: url(../img/main/6th-section-postulates/elephants.png);
+}
+
+.postulates__background-image.two {
+    background-image: url(../img/main/6th-section-postulates/nature-underwater.png);
+}
+
+.postulates__background-image.three {
+    background-image: url(../img/main/6th-section-postulates/house-on-the-mountain.png);
+}
+
+.postulates__background-image.four {
+    background-image: url(../img/main/6th-section-postulates/blue-sky-and-mountains.png);
+}
+
+.postulates__background-image.one.active {
+    opacity: 1;
+}
+
+.postulates__background-image.two.active {
+    opacity: 1;
+}
+
+.postulates__background-image.three.active {
+    opacity: 1;
+}
+
+.postulates__background-image.four.active {
+    opacity: 1;
 }
 
 .postulates__container {
@@ -862,30 +894,30 @@ body {
     letter-spacing: 1.08px;
     color: #FFFFFF;
     cursor: pointer;
-    transition: 0.5s;
+    transition: all 0.5s ease 0s;
 }
 
 .postulates__list-item:not(:last-child) {
     margin: 0px 0px 30px 0px;
 }
 
-.postulates__list-item.yellow {
+.postulates__list-item.yellow.active {
     color: #EAEAB6;
+    opacity: 1;
 }
 
-.postulates__list-item.blue {
+.postulates__list-item.blue.active {
     color: rgb(176, 235, 235);
+    opacity: 1;
 }
 
-.postulates__list-item.pink {
+.postulates__list-item.pink.active {
     color: rgb(224, 188, 170);
+    opacity: 1;
 }
 
-.postulates__list-item.gray {
+.postulates__list-item.gray.active {
     color: rgb(221, 215, 236);
-}
-
-.postulates__list-item.active {
     opacity: 1;
 }
 
@@ -900,23 +932,25 @@ body {
     padding-left: 12px;
     padding-top: 6px;
     color: #0D231F;
+    background-color: #ffffff;
     letter-spacing: 1.08px;
     border-radius: 32px;
+    transition: all 0.5s ease 0s;
 }
 
-.postulates__number-item.yellow {
+.postulates__number-item.yellow.active {
     background: #EAEAB6;
 }
 
-.postulates__number-item.blue {
+.postulates__number-item.blue.active {
     background: rgb(176, 235, 235);
 }
 
-.postulates__number-item.pink {
+.postulates__number-item.pink.active {
     background: rgb(224, 188, 170);
 }
 
-.postulates__number-item.gray {
+.postulates__number-item.gray.active {
     background: rgb(221, 215, 236);
 }
 
@@ -928,23 +962,30 @@ body {
     max-width: 590px;
     line-height: 22px;
     padding: 0px 50px 0px 0px;
+    color: #ffffff;
+    opacity: 0;
+    transition: all 0.5s ease 0s;
+}
+
+.postulates__second-paragraph.active{
+    opacity: 1;
 }
 
 .postulates__second-paragraph.yellow {
     color: #EAEAB6;
 }
 
-/* .postulates__second-paragraph.blue {
-    background: rgb(176, 235, 235);
+.postulates__second-paragraph.blue {
+    color: rgb(176, 235, 235);
 }
 
 .postulates__second-paragraph.pink {
-    background: rgb(224, 188, 170);
+    color: rgb(224, 188, 170);
 }
 
 .postulates__second-paragraph.gray {
-    background: rgb(221, 215, 236);
-} */
+    color: rgb(221, 215, 236);
+}
 
 @media (max-height: 600px) {
     .postulates__list-item {
@@ -1075,7 +1116,7 @@ body {
 
 .swiper-slide .partnership-rules-slide__opacity {
     opacity: 0.3;
-    transition: 0.5s;
+    transition: all 0.5s ease 0s;
 }
 
 .swiper-slide-active .partnership-rules-slide__opacity,
@@ -1112,7 +1153,7 @@ body {
     background: #DEDFCE;
     color: #0D231F;
     border-radius: 42px;
-    transition: 0.5s;
+    transition: all 1s ease 0s;
 }
 
 .partnership-rules__link:hover {
@@ -1229,7 +1270,7 @@ body {
     background-color: rgba(13, 35, 31, 1);
     border-radius: 42px;
     cursor: pointer;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease 0s;
 }
 
 .footer__button-submit:hover {

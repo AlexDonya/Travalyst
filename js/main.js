@@ -2,9 +2,9 @@
 new Swiper('.travel-companies-slider', {
     loop: true,
     loopedSlides: 10,
-    mousewheel: {
-        sensitivity: 1,
-    },
+    // mousewheel: {
+    //     sensitivity: 1,
+    // },
     slidesPerView: 3,
     centeredSlides: true,
     initialSlide: 0,
@@ -12,7 +12,7 @@ new Swiper('.travel-companies-slider', {
         delay: 5000,
         disableOnInteraction: false,
     },
-    speed: 800,
+    speed: 1000,
 });
 
 
@@ -105,6 +105,8 @@ stars[2].onmouseleave = () => {
 // section postulates
 const listItems = document.querySelectorAll('.postulates__list-item');
 const numberItems = document.querySelectorAll('.postulates__number-item');
+const postBckgImgs = document.querySelectorAll('.postulates__background-image');
+const postParagraphs = document.querySelectorAll('.postulates__second-paragraph');
 
 let index = 0;
 
@@ -122,9 +124,25 @@ const activeNumberItem = n => {
     numberItems[n].classList.add('active');
 };
 
+const activePostBckgImg = n => {
+    for (postBckgImg of postBckgImgs) {
+        postBckgImg.classList.remove('active');
+    }
+    postBckgImgs[n].classList.add('active');
+};
+
+const activePostParagraph = n => {
+    for (postParagraph of postParagraphs) {
+        postParagraph.classList.remove('active');
+    }
+    postParagraphs[n].classList.add('active');
+}
+
 const prepareCurrentItem = ind => {
     activeListItem(index);
     activeNumberItem(index);
+    activePostBckgImg(index);
+    activePostParagraph(index);
 };
 
 listItems.forEach((item, indexDot) => {
@@ -141,36 +159,46 @@ numberItems.forEach((item, indexDot) => {
     })
 });
 
+// postBckgImgs.forEach((item, indexDot) => {
+//     item.addEventListener('mouseenter', () => {
+//         index = indexDot;
+//         prepareCurrentItem(index);
+//     })
+// });
+
+// postParagraphs.forEach((item, indexDot) => {
+//     item.addEventListener( () => {
+//         index = indexDot;
+//         prepareCurrentItem(index);
+//     })
+// });
+
 // _______________________________________________________________________________________________
 
-function getBackgroundImageOne() {
-    document.querySelector('.postulates__background-image').style.background = "url('img/main/6th-section-postulates/elephants.png')";
-    document.querySelector('.postulates__background-image').style.backgroundSize = 'cover';
-    document.querySelector('.postulates__background-image').style.backgroundRepeat = 'no-repeat';
-    document.querySelector('.postulates__background-image').style.backgroundPosition = 'center';
-
-};
-function getBackgroundImageTwo() {
-    document.querySelector('.postulates__background-image').style.background = "url('img/main/6th-section-postulates/nature-underwater.png')";
-    document.querySelector('.postulates__background-image').style.backgroundSize = 'cover';
-    document.querySelector('.postulates__background-image').style.backgroundRepeat = 'no-repeat';
-    document.querySelector('.postulates__background-image').style.backgroundPosition = 'center';
-
-};
-function getBackgroundImageThree() {
-    document.querySelector('.postulates__background-image').style.background = "url('img/main/6th-section-postulates/house-on-the-mountain.png')";
-    document.querySelector('.postulates__background-image').style.backgroundSize = 'cover';
-    document.querySelector('.postulates__background-image').style.backgroundRepeat = 'no-repeat';
-    document.querySelector('.postulates__background-image').style.backgroundPosition = 'center';
-
-};
-function getBackgroundImageFour() {
-    document.querySelector('.postulates__background-image').style.background = "url('img/main/6th-section-postulates/blue-sky-and-mountains.png')";
-    document.querySelector('.postulates__background-image').style.backgroundSize = 'cover';
-    document.querySelector('.postulates__background-image').style.backgroundRepeat = 'no-repeat';
-    document.querySelector('.postulates__background-image').style.backgroundPosition = 'center';
-
-};
+// function getBackgroundImageOne() {
+//     document.querySelector('.postulates__background-image').style.background = "url('img/main/6th-section-postulates/elephants.png')";
+//     document.querySelector('.postulates__background-image').style.backgroundSize = 'cover';
+//     document.querySelector('.postulates__background-image').style.backgroundRepeat = 'no-repeat';
+//     document.querySelector('.postulates__background-image').style.backgroundPosition = 'center';
+// };
+// function getBackgroundImageTwo() {
+//     document.querySelector('.postulates__background-image').style.background = "url('img/main/6th-section-postulates/nature-underwater.png')";
+//     document.querySelector('.postulates__background-image').style.backgroundSize = 'cover';
+//     document.querySelector('.postulates__background-image').style.backgroundRepeat = 'no-repeat';
+//     document.querySelector('.postulates__background-image').style.backgroundPosition = 'center';
+// };
+// function getBackgroundImageThree() {
+//     document.querySelector('.postulates__background-image').style.background = "url('img/main/6th-section-postulates/house-on-the-mountain.png')";
+//     document.querySelector('.postulates__background-image').style.backgroundSize = 'cover';
+//     document.querySelector('.postulates__background-image').style.backgroundRepeat = 'no-repeat';
+//     document.querySelector('.postulates__background-image').style.backgroundPosition = 'center';
+// };
+// function getBackgroundImageFour() {
+//     document.querySelector('.postulates__background-image').style.background = "url('img/main/6th-section-postulates/blue-sky-and-mountains.png')";
+//     document.querySelector('.postulates__background-image').style.backgroundSize = 'cover';
+//     document.querySelector('.postulates__background-image').style.backgroundRepeat = 'no-repeat';
+//     document.querySelector('.postulates__background-image').style.backgroundPosition = 'center';
+// };
 
 
 // section partnership-rules
@@ -182,5 +210,5 @@ new Swiper('.partnership-rules-slider', {
     slidesPerView: 'auto',
     slidesPerGroup: 1,
     spaceBetween: 8,
-    speed: 500,
+    speed: 1000,
 });
