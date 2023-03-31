@@ -212,26 +212,17 @@ body {
 
 .founders__container {
     max-width: 758px;
-    min-height: 550px;
+    min-height: 600px;
     position: relative;
     display: flex;
-    padding: 0px 10px 0px 0px;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
-.founders__title {
-    position: relative;
-    max-width: 580px;
-    margin: 0px 0px 0px 80px;
-    font-size: 27px;
-    line-height: 35px;
-}
-
-.founders__title::before {
+.founders__blockquotes::before {
     position: absolute;
-    left: -110px;
-    top: 10px;
+    left: -20px;
+    top: 65px;
     content: "";
     width: 42px;
     height: 42px;
@@ -242,29 +233,55 @@ body {
     background-color: rgba(255, 255, 255, 0.5);
 }
 
+.founders__blockquotes {
+    position: relative;
+}
+
+.founders__blockquote {
+    position: absolute;
+    top: 50px;
+    opacity: 0;
+    transition: all 0.5s ease 0s;
+    padding: 10px;
+    max-width: 700px;
+}
+
+.founders__blockquote.relative {
+    position: relative;
+}
+
+.founders__blockquote.active {
+    opacity: 1;
+}
+
+.founders__title {
+    position: relative;
+    margin: 0px 0px 50px 80px;
+    font-size: 27px;
+    line-height: 35px;
+}
+
 .founders__text {
-    max-width: 585px;
     line-height: 22px;
     margin: 0px 0px 0px 80px;
 }
 
 .founders-slider {
-    position: relative;
-    height: 130px;
+    min-height: 180px;
     width: 610px;
     overflow: hidden;
-    padding-top: 14px;
     margin: 0px 0px 0px 80px;
 }
 
 .founders-slider__wrapper {
     left: 40px;
+    min-height: 60px;
+    align-items: center;
 }
 
 .founders-slider-buttons {
     position: absolute;
-    top: 408px;
-    left: 0;
+    top: 440px;
 }
 
 .founders-slider-buttons .swiper-button-next::after,
@@ -306,6 +323,11 @@ body {
     background-color: rgba(13, 35, 31, 1);
 }
 
+.swiper-button-prev,
+.swiper-button-next {
+    position: absolute;
+}
+
 .swiper-button-prev {
     left: -30px;
 }
@@ -314,29 +336,45 @@ body {
     left: 720px;
 }
 
-.swiper-slide-active .founders-slider__image {
-    transform: scale(2.15);
-    transition: all 0.5s ease 0s;
-    top: 5px;
-    padding-top: 10px;
+.founders-slider__image {
+    width: 28px;
+    height: 28px;
+}
+
+.founders-slider__image img {
+    width: 28px;
+    height: 28px;
 }
 
 .swiper-slide .founders-slider__image {
     transition: all 0.5s ease 0s;
+    opacity: 0.5;
 }
 
-.founders-slider__image {
-    width: 60px;
-    height: 60px;
+.founders-slider__image:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.swiper-slide-active .founders-slider__image {
+    transform: scale(2.15);
+    transition: all 0.5s ease 0s;
+    opacity: 1;
+    cursor: auto;
 }
 
 .founders-slider__text {
     visibility: hidden;
     opacity: 0;
     position: absolute;
-    width: 158px;
+    width: 235px;
+    top: 60px;
     left: -35px;
     line-height: 22px;
+}
+
+.founders-slider__text h6 {
+    font-weight: 700;
 }
 
 .swiper-slide-active .founders-slider__text {
@@ -360,25 +398,28 @@ body {
 }
 
 @media (max-width: 840px) {
-    .founders__title::before {
-        left: -70px;
+    .founders__blockquotes::before {
+        left: 20px;
     }
 }
 
 @media (max-width: 767.98px) {
-    .founders__container {
-        min-height: 650px;
-    }
-
     .swiper-button-prev,
     .swiper-button-next {
         display: none;
     }
 }
 
+@media (max-width: 649.98px) {
+    .founders__container {
+        min-height: 650px;
+    }
+}
+
 @media (max-width: 599.98px) {
+
     .founders__title {
-        margin: 70px 0px 0px 20px;
+        margin: 30px 0px 0px 20px;
     }
 
     .founders__text {
@@ -386,9 +427,27 @@ body {
         padding: 30px 0px 30px 0px;
     }
 
-    .founders__title::before {
-        left: -10px;
-        top: -45px;
+    .founders__blockquotes::before {
+        left: 20px;
+        top: 30px;
+    }
+}
+
+@media (max-width: 479.98px) {
+    .founders__container {
+        min-height: 750px;
+    }
+}
+
+@media (max-width: 399.98px) {
+    .founders__container {
+        min-height: 850px;
+    }
+}
+
+@media (max-width: 349.98px) {
+    .founders__container {
+        min-height: 900px;
     }
 }
 
@@ -829,7 +888,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    transition: all 0.5s ease 0.1s;
+    transition: all 0.4s ease 0s;
     z-index: -1;
     opacity: 0;
 }

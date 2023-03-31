@@ -17,14 +17,68 @@ new Swiper('.travel-companies-slider', {
 
 
 // section founders
-new Swiper('.founders-slider', {
+let foundersSlider = new Swiper('.founders-slider', {
+    touchRatio: 0,
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
     },
     loop: true,
-    slidesPerView: 5,
+    slidesPerView: 5.5,
+    spaceBetween: 84,
+    slideToClickedSlide: true,
+    speed: 500,
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+            touchRatio: 1,
+        },
+        480: {
+            slidesPerView: 3,
+            touchRatio: 1,
+        },
+        992: {
+            slidesPerView: 5.5,
+        },
+    },
 });
+
+const foundersBlockquotes = document.querySelectorAll('.founders__blockquote');
+const nextButtonFoundersSlider = document.querySelector('.swiper-button-next');
+const prevButtonFoundersSlider = document.querySelector('.swiper-button-prev');
+
+let indexBlockquote = 0;
+
+const activeBlockquote = n => {
+    for (foundersBlockquote of foundersBlockquotes) {
+        foundersBlockquote.classList.remove('active');
+    }
+    foundersBlockquotes[n].classList.add('active');
+};
+
+const prepareCurrentBlockqute = ind => {
+    activeBlockquote(indexBlockquote);
+};
+
+function nextBlockquote() {
+    indexBlockquote = foundersSlider.realIndex;
+        activeBlockquote(indexBlockquote);
+}
+
+function prevBlockquote() {
+    indexBlockquote = foundersSlider.realIndex;
+        activeBlockquote(indexBlockquote);
+}
+
+foundersSlider.slides.forEach((item) => {
+    item.addEventListener('click', () => {
+        indexBlockquote = foundersSlider.realIndex;
+        activeBlockquote(indexBlockquote);
+    });
+});
+
+nextButtonFoundersSlider.addEventListener('click', nextBlockquote);
+prevButtonFoundersSlider.addEventListener('click', prevBlockquote);
 
 
 // section frameworks
@@ -108,7 +162,7 @@ const numberItems = document.querySelectorAll('.postulates__number-item');
 const postBckgImgs = document.querySelectorAll('.postulates__background-image');
 const postParagraphs = document.querySelectorAll('.postulates__second-paragraph');
 
-let index = 0;
+let indexPostulates = 0;
 
 const activeListItem = n => {
     for (listItem of listItems) {
@@ -139,31 +193,31 @@ const activePostParagraph = n => {
 }
 
 const prepareCurrentItem = ind => {
-    activeListItem(index);
-    activeNumberItem(index);
-    activePostBckgImg(index);
-    activePostParagraph(index);
+    activeListItem(indexPostulates);
+    activeNumberItem(indexPostulates);
+    activePostBckgImg(indexPostulates);
+    activePostParagraph(indexPostulates);
 };
 
 listItems.forEach((item, indexDot) => {
     item.addEventListener('mouseenter', () => {
-        index = indexDot;
-        prepareCurrentItem(index);
+        indexPostulates = indexDot;
+        prepareCurrentItem(indexPostulates);
     });
     item.addEventListener('click', () => {
-        index = indexDot;
-        prepareCurrentItem(index);
+        indexPostulates = indexDot;
+        prepareCurrentItem(indexPostulates);
     });
 });
-// 'mouseenter',
+
 numberItems.forEach((item, indexDot) => {
     item.addEventListener('mouseenter', () => {
-        index = indexDot;
-        prepareCurrentItem(index);
+        indexPostulates = indexDot;
+        prepareCurrentItem(indexPostulates);
     });
     item.addEventListener('click', () => {
-        index = indexDot;
-        prepareCurrentItem(index);
+        indexPostulates = indexDot;
+        prepareCurrentItem(indexPostulates);
     });
 });
 

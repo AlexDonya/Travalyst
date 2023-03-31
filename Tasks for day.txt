@@ -1,0 +1,8 @@
+1. Add quotes for all founders in the second section "Founders".
+2. Disable rounding on hover in the mobile version in the third section "Frameworks".
+3. Fix disappearing button on second slide in the mobile verson in the third section "Frameworks".
+4. Make link drops work properly in the fifth section "Sustainably".
+5. Come up with something with a button in the footer.
+6. Align all padding to the same distance.
+7. Make smooth content dropout effect.
+8. Check the whole project and test it.
