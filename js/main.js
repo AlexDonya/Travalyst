@@ -41,11 +41,30 @@ let foundersSlider = new Swiper('.founders-slider', {
             slidesPerView: 5.5,
         },
     },
+    // on: {
+    //     slideChange: function () {
+    // indexBlockquote = foundersSlider.realIndex;
+    // activeBlockquote(indexBlockquote);
+    // console.log(foundersSlider.realIndex);
+    //     }
+    // },
 });
 
 const foundersBlockquotes = document.querySelectorAll('.founders__blockquote');
-const nextButtonFoundersSlider = document.querySelector('.swiper-button-next');
-const prevButtonFoundersSlider = document.querySelector('.swiper-button-prev');
+// const nextButtonFoundersSlider = document.querySelector('.swiper-button-next');
+// const prevButtonFoundersSlider = document.querySelector('.swiper-button-prev');
+
+
+// foundersSlider.addEventListener('touchstart', handleTouchStart, false);
+// foundersSlider.addEventListener('touchmove', handleTouchMove, false);
+
+
+
+// wrapperForSwipe.addEventListener('click', click);
+
+// function click() {
+//     console.log('click');
+// }
 
 let indexBlockquote = 0;
 
@@ -56,29 +75,185 @@ const activeBlockquote = n => {
     foundersBlockquotes[n].classList.add('active');
 };
 
-const prepareCurrentBlockqute = ind => {
+// function nextBlockquote() {
+//     indexBlockquote = foundersSlider.realIndex;
+//     activeBlockquote(indexBlockquote);
+// }
+
+// function prevBlockquote() {
+//     indexBlockquote = foundersSlider.realIndex;
+//     activeBlockquote(indexBlockquote);
+// }
+
+// foundersSlider.slides.forEach((item) => {
+//     item.addEventListener('click', () => {
+//         indexBlockquote = foundersSlider.realIndex;
+//         activeBlockquote(indexBlockquote);
+//     });
+// });
+
+// const activeSlide = document.querySelector('.founders-slider__slide.swiper-slide.swiper-slide-active');
+// console.log(activeSlide);
+
+
+// foundersSlider.slides.forEach((item) => {
+//     item.addEventListener('touchstart', () => {
+// indexBlockquote = foundersSlider.realIndex;
+// activeBlockquote(indexBlockquote);
+
+// console.log(indexBlockquote);
+// console.log(foundersSlider.realIndex);
+//     });
+// });
+
+// foundersSlider.slides.forEach((item) => {
+//     item.addEventListener('touchmove', () => {
+//         indexBlockquote = foundersSlider.realIndex;
+//         activeBlockquote(indexBlockquote);
+
+//         console.log(indexBlockquote);
+//     });
+// });
+
+// foundersSlider.slides.forEach((item) => {
+//     item.addEventListener('touchend', () => {
+// if (foundersSlider.realIndex + 1) {
+//     indexBlockquote = foundersSlider.realIndex;
+//     activeBlockquote(indexBlockquote);
+// } else {
+//     return false;
+// }
+// indexBlockquote = foundersSlider.realIndex;
+// activeBlockquote(indexBlockquote);
+
+// console.log(indexBlockquote);
+// console.log(foundersSlider.realIndex);
+//     });
+// });
+
+
+// nextButtonFoundersSlider.addEventListener('click', nextBlockquote);
+// prevButtonFoundersSlider.addEventListener('click', prevBlockquote);
+
+
+foundersSlider.on('slideChange', function () {
+    indexBlockquote = foundersSlider.realIndex;
     activeBlockquote(indexBlockquote);
-};
-
-function nextBlockquote() {
-    indexBlockquote = foundersSlider.realIndex;
-        activeBlockquote(indexBlockquote);
-}
-
-function prevBlockquote() {
-    indexBlockquote = foundersSlider.realIndex;
-        activeBlockquote(indexBlockquote);
-}
-
-foundersSlider.slides.forEach((item) => {
-    item.addEventListener('click', () => {
-        indexBlockquote = foundersSlider.realIndex;
-        activeBlockquote(indexBlockquote);
-    });
 });
 
-nextButtonFoundersSlider.addEventListener('click', nextBlockquote);
-prevButtonFoundersSlider.addEventListener('click', prevBlockquote);
+
+// wrapperForSwipe = document.querySelector('.founders-slider__wrapper');
+
+// wrapperForSwipe.addEventListener('touchstart', handleTouchStart, false);
+// wrapperForSwipe.addEventListener('touchmove', handleTouchMove, false);
+// wrapperForSwipe.addEventListener('touchend', handleTouchEnd, false);
+
+// let x1 = null;
+// let y1 = null;
+
+// function handleTouchStart(event) {
+//     const firstTouch = event.touches[0];
+//     x1 = firstTouch.clientX;
+//     y1 = firstTouch.clientY;
+//     // console.log(x1, y1);
+
+//     indexBlockquote = foundersSlider.realIndex;
+//     activeBlockquote(indexBlockquote);
+
+// if (foundersSlider.realIndex+1) {
+//     indexBlockquote = foundersSlider.realIndex;
+//     activeBlockquote(indexBlockquote);
+// } else {
+//     return false;
+// }
+// }
+
+// function handleTouchMove(event) {
+// console.log(indexBlockquote);
+// console.log(foundersSlider.realIndex);
+
+// if (!x1 || !y1) {
+//     return false;
+// }
+// let x2 = event.touches[0].clientX;
+// let y2 = event.touches[0].clientY;
+// // console.log(x2, y2);
+// let xDiff = x2 - x1;
+// let yDiff = y2 - y1;
+
+// indexBlockquote === foundersSlider.realIndex;
+// indexBlockquote = foundersSlider.realIndex;
+// activeBlockquote(indexBlockquote);
+
+// if (foundersSlider.realIndex+1) {
+//     indexBlockquote = foundersSlider.realIndex;
+//     activeBlockquote(indexBlockquote);
+// } else {
+//     return false;
+// }
+
+
+// if (Math.abs(xDiff) > Math.abs(yDiff)) {
+// r - l
+// if (xDiff > 0) {
+// if (foundersSlider.realIndex - 1) {
+//     indexBlockquote = foundersSlider.realIndex;
+//     activeBlockquote(indexBlockquote);
+// } else {
+//     return false;
+// }
+
+//     console.log(indexBlockquote);
+//     console.log(foundersSlider.realIndex);
+//     // console.log(foundersSlider.realIndex--);
+//     console.log('right');
+// }
+// else {
+// if (foundersSlider.realIndex + 1) {
+//     // indexBlockquote = foundersSlider.realIndex;
+//     activeBlockquote(indexBlockquote);
+// } else {
+//     return false;
+// }
+//     console.log(indexBlockquote);
+//     console.log(foundersSlider.realIndex);
+//     // console.log(foundersSlider.realIndex++);
+//     console.log('left');
+// }
+// } else {
+// t - b
+// if (yDiff > 0) {
+// if (indexBlockquote = foundersSlider.realIndex) {
+//     activeBlockquote(indexBlockquote);
+// } else {
+//     activeBlockquote(indexBlockquote);
+// }
+// console.log('bottom');
+// }
+// else {
+// if (indexBlockquote = foundersSlider.realIndex) {
+//     activeBlockquote(indexBlockquote);
+// } else {
+//     activeBlockquote(indexBlockquote);
+// }
+// console.log('top');
+// }
+// }
+// x1 = null;
+// y1 = null;
+// }
+
+// function handleTouchEnd(event) {
+//     indexBlockquote = foundersSlider.realIndex;
+//     activeBlockquote(indexBlockquote);
+
+// if (foundersSlider.realIndex+1) {
+//     indexBlockquote = foundersSlider.realIndex;
+//     activeBlockquote(indexBlockquote);
+// } else {
+//     return false;
+// }
+// }
 
 
 // section frameworks
