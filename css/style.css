@@ -309,12 +309,12 @@ body {
     transition: all 0.5s ease 0s;
 }
 
-.button-prev:hover {
+body.hasHover .button-prev:hover {
     background-image: url(../img/prev-arrow-white.svg);
     background-color: rgba(13, 35, 31, 1);
 }
 
-.button-next:hover {
+body.hasHover .button-next:hover {
     background-image: url(../img/next-arrow-white.svg);
     background-color: rgba(13, 35, 31, 1);
 }
@@ -347,7 +347,7 @@ body {
     opacity: 0.5;
 }
 
-.founders-slider__image:hover {
+body.hasHover .founders-slider__image:hover {
     opacity: 1;
     cursor: pointer;
 }
@@ -535,7 +535,7 @@ body {
     opacity: 0;
 }
 
-.frameworks-slider__slide:hover .frameworks-slider__button::before {
+body.hasHover .frameworks-slider__slide:hover .frameworks-slider__button::before {
     opacity: 1;
 }
 
@@ -787,7 +787,7 @@ body {
     transition: all 0.5s ease 0s;
 }
 
-.sustainably__star:hover {
+body.hasHover .sustainably__star:hover {
     background-image: url(../img/main/5th-section-sustainably/white-star.svg);
     background-color: #0D231F;
 }
@@ -1219,7 +1219,7 @@ body {
     transition: all 1s ease 0s;
 }
 
-.partnership-rules__link:hover {
+body.hasHover .partnership-rules__link:hover {
     background-color: rgb(13, 35, 31);
     color: #ffffff;
 }
@@ -1336,7 +1336,7 @@ body {
     transition: all 0.5s ease 0s;
 }
 
-.footer__button-submit:hover {
+body.hasHover .footer__button-submit:hover {
     opacity: 0.5;
 }
 
