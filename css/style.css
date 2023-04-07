@@ -76,12 +76,13 @@ h5,
 h6 {
     font-size: inherit;
     font-weight: 400;
+    margin: 0;
 }
 
 body {
     font-family: Roboto;
-    font-size: 1.215em;
-    /* font-size: 17px; */
+    /* font-size: 1.215em; */
+    font-size: 17px;
     color: #0D231F;
 }
 
@@ -92,6 +93,8 @@ body {
     overflow: hidden;
     margin: 5px 5px 5px 5px;
 }
+
+
 
 .main {
     flex: 1 1 auto;
@@ -105,31 +108,60 @@ body {
 
 .header {
     position: relative;
-    background-image: url(../img/header/airplane-wing-and-mountains.svg);
+    min-height: 99vh;
+}
+
+.header__background-image {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    border-radius: 15px;
+    background-image: url(../img/header/airplane-wing-and-mountains-Original-scaled-2000x1250.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    min-height: 99vh;
-    border-radius: 15px;
+    filter: brightness(0.7);
 }
 
 .header__logo {
     position: relative;
     top: 30px;
     left: 15px;
+
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.header__logo._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
 }
 
 .header__title {
     position: absolute;
     width: 70%;
     left: 25px;
-    bottom: 0;
+    bottom: 75px;
     color: #FFFFFF;
 }
 
 .title {
     font-size: 70px;
     line-height: 86px;
+
+    transform: translate(0px, 100%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.title._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+}
+
+.header__title._active {
+    transition: all 0.8s ease 0.4s;
 }
 
 @media (max-width: 991.98px) {
@@ -154,6 +186,15 @@ body {
     border-radius: 15px;
     margin: 5px 0px -20px 0px;
     z-index: 2;
+
+    transform: translate(0px, 20%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.travel-companies._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
 }
 
 .travel-companies__container {
@@ -167,10 +208,30 @@ body {
     max-width: 682px;
     font-size: 36px;
     line-height: 40px;
+
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.travel-companies__title._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 0.8s ease 0.4s;
 }
 
 .travel-companies-slider {
     padding: 30px 0;
+
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.travel-companies-slider._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 0.8s ease 0.4s;
 }
 
 .travel-companies-slider__slide .travel-companies-slider__image {
@@ -187,6 +248,16 @@ body {
 .travel-companies__text {
     max-width: 626px;
     line-height: 22px;
+
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.travel-companies__text._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 0.8s ease 0.4s;
 }
 
 @media (max-width: 991.98px) {
@@ -208,6 +279,15 @@ body {
     background-color: #D7DFD1;
     border-radius: 15px;
     margin: 0px 0px 5px 0px;
+
+    transform: translate(0px, 30%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.founders._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
 }
 
 .founders__container {
@@ -220,6 +300,7 @@ body {
 }
 
 .founders__blockquotes::before {
+    display: inline-block;
     position: absolute;
     left: -20px;
     top: 65px;
@@ -231,6 +312,16 @@ body {
     background-position: center;
     border-radius: 42px;
     background-color: rgba(255, 255, 255, 0.5);
+
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.founders__blockquotes._active.founders__blockquotes::before {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 0.8s ease 1.5s;
 }
 
 .founders__blockquotes {
@@ -255,11 +346,43 @@ body {
     margin: 0px 0px 50px 80px;
     font-size: 27px;
     line-height: 35px;
+
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.founders__title._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 0.8s ease 0.4s;
 }
 
 .founders__text {
     line-height: 22px;
     margin: 0px 0px 0px 80px;
+
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.founders__text._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 0.8s ease 0.4s;
+}
+
+.founders-slider-wrapper {
+    transform: translate(0px, 80%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.founders-slider-wrapper._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    /* transition: all 0.8s ease 0.4s; */
 }
 
 .founders-slider {
@@ -273,11 +396,6 @@ body {
     left: 40px;
     min-height: 60px;
     align-items: center;
-}
-
-.founders-slider-buttons {
-    position: absolute;
-    top: 440px;
 }
 
 .founders-slider-buttons .swiper-button-next::after,
@@ -326,10 +444,12 @@ body.hasHover .button-next:hover {
 
 .swiper-button-prev {
     left: -30px;
+    top: 32px;
 }
 
 .swiper-button-next {
     left: 720px;
+    top: 32px;
 }
 
 .founders-slider__image {
@@ -400,6 +520,7 @@ body.hasHover .founders-slider__image:hover {
 }
 
 @media (max-width: 767.98px) {
+
     .swiper-button-prev,
     .swiper-button-next {
         display: none;
@@ -445,6 +566,10 @@ body.hasHover .founders-slider__image:hover {
     .founders__container {
         min-height: 900px;
     }
+
+    .founders-slider {
+        margin: 0px 0px 0px 40px;
+    }
 }
 
 /* Third section Frameworks */
@@ -455,6 +580,15 @@ body.hasHover .founders-slider__image:hover {
     margin: 0px 0px -20px 0px;
     border-radius: 15px;
     z-index: 2;
+
+    transform: translate(0px, 20%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.frameworks._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
 }
 
 .frameworks__container {
@@ -469,6 +603,15 @@ body.hasHover .founders-slider__image:hover {
 
 .frameworks-slider {
     margin: 40px 0px 0px 0px;
+
+    transform: translate(0px, 60%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.frameworks-slider._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
 }
 
 .frameworks-slider__slide {
@@ -491,7 +634,7 @@ body.hasHover .founders-slider__image:hover {
     transition: all 0.5s ease 0s;
 }
 
-.frameworks-slider__slide:hover .frameworks-slider__text h5 {
+body.hasHover .frameworks-slider__slide:hover .frameworks-slider__text h5 {
     bottom: 52px;
 }
 
@@ -506,7 +649,7 @@ body.hasHover .founders-slider__image:hover {
     transition: all 0.5s ease 0s;
 }
 
-.frameworks-slider__slide:hover .frameworks-slider__text p {
+body.hasHover .frameworks-slider__slide:hover .frameworks-slider__text p {
     color: #FFFFFF;
 }
 
@@ -514,7 +657,7 @@ body.hasHover .founders-slider__image:hover {
     transition: all 0.5s ease 0s;
 }
 
-.frameworks-slider__slide:hover .frameworks-slider__image img {
+body.hasHover .frameworks-slider__slide:hover .frameworks-slider__image img {
     filter: brightness(0.5);
     border-radius: 25px;
 }
@@ -555,6 +698,14 @@ body.hasHover .frameworks-slider__slide:hover .frameworks-slider__button::before
     position: absolute;
     top: 745px;
     left: 720px;
+
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.frameworks-slider-buttons._active {
+    opacity: 1;
+    transition: all 0.8s ease 1s;
 }
 
 .frameworks-slider-button-next,
@@ -573,8 +724,29 @@ body.hasHover .frameworks-slider__slide:hover .frameworks-slider__button::before
     margin: 60px 0px 50px 20px;
 }
 
+.frameworks-text__1 {
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.frameworks-text__1._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 0.8s ease 0.4s;
+}
+
 .frameworks-text__2 {
     margin: 40px 0px 0px 0px;
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.frameworks-text__2._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 0.8s ease 0.4s;
 }
 
 @media (max-width: 1365.98px) {
@@ -657,6 +829,15 @@ body.hasHover .frameworks-slider__slide:hover .frameworks-slider__button::before
     position: relative;
     min-height: 99vh;
     margin: 0px 0px 5px 0px;
+
+    transform: translate(0px, 20%);
+    opacity: 0;
+    transition: all 1.4s ease 0s;
+}
+
+.booking._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
 }
 
 .booking__background-image {
@@ -681,6 +862,16 @@ body.hasHover .frameworks-slider__slide:hover .frameworks-slider__button::before
     max-width: 800px;
     font-size: 46px;
     line-height: 50px;
+
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.booking-text__title._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 0.8s ease 0.8s;
 }
 
 .booking-text__paragraph {
@@ -688,6 +879,16 @@ body.hasHover .frameworks-slider__slide:hover .frameworks-slider__button::before
     font-size: 20px;
     line-height: 26px;
     margin: 40px 0px 100px 0px;
+
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.booking-text__paragraph._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 0.8s ease 1.2s;
 }
 
 @media (max-width: 425px) {
@@ -710,6 +911,15 @@ body.hasHover .frameworks-slider__slide:hover .frameworks-slider__button::before
     border-radius: 15px;
     margin: 0px 0px -20px 0px;
     z-index: 2;
+
+    transform: translate(0px, 20%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.sustainably._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
 }
 
 .sustainably__container {
@@ -732,46 +942,80 @@ body.hasHover .frameworks-slider__slide:hover .frameworks-slider__button::before
     line-height: 70px;
 }
 
-.sustainably__values {
+.sustainably__rows {
     max-width: 800px;
     min-height: 350px;
     margin: 40px 0px 0px 0px;
 }
 
-.sustainably__value {
+.sustainably__rows div {
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.sustainably__rows._active div:nth-child(1) {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 0.8s ease 0.4s;
+}
+
+.sustainably__rows._active div:nth-child(2) {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 0.8s ease 0.8s;
+}
+
+.sustainably__rows._active div:nth-child(3) {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 0.8s ease 1.2s;
+}
+
+.sustainably__row {
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     max-width: 800px;
+    width: 100%;
     min-height: 110px;
+    height: 100%;
     background: #FFFFFF;
     border-radius: 15px;
 }
 
-.sustainably__value:not(:last-child) {
+.sustainably__row:not(:last-child) {
     margin: 0px 0px 7px 0px;
 }
 
-.value__sustainably {
+.sustainably__value {
     position: relative;
     z-index: 1;
-    max-width: 140px;
     font-size: 36px;
     line-height: 40px;
     letter-spacing: 1.08px;
-    margin: 0px 0px 0px 20px;
+    margin: 10px 0px 0px 20px;
+    max-width: 24.99999%;
 }
 
-.value__sustainably span {
+.sustainably__value span {
     font-size: 52px;
     line-height: 60px;
     letter-spacing: 2.4px;
 }
 
 .sustainably__text {
-    max-width: 400px;
     line-height: 22px;
+    flex: 0 0 58.33331%;
+    max-width: 58.33331%;
+    margin: 10px;
+}
+
+.sustainably__block-star {
+    max-width: 16.66666%;
+    margin: 20px;
 }
 
 .sustainably__star {
@@ -782,7 +1026,6 @@ body.hasHover .frameworks-slider__slide:hover .frameworks-slider__button::before
     background-position: center;
     background-color: #E9F1F3;
     border-radius: 16px;
-    margin: 0px 20px 0px 0px;
     cursor: pointer;
     transition: all 0.5s ease 0s;
 }
@@ -803,6 +1046,7 @@ body.hasHover .sustainably__star:hover {
     transition: all 0.5s ease 0s;
     opacity: 0;
     z-index: 2;
+    pointer-events: none;
 }
 
 .sustainably__link a {
@@ -813,14 +1057,24 @@ body.hasHover .sustainably__star:hover {
     opacity: 0.8;
 }
 
-.sustainably__link a:hover {
+body.hasHover .sustainably__link a:hover {
     opacity: 1;
 }
 
 .sustainably__paragraph {
-    margin: 50px 0px 0px 25px;
+    margin: 50px 0px 15px 25px;
     max-width: 550px;
     line-height: 22px;
+
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.sustainably__paragraph._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 0.8s ease 0.8s;
 }
 
 .sustainably__image img {
@@ -831,39 +1085,47 @@ body.hasHover .sustainably__star:hover {
     top: 120px;
     right: -300px;
     border-radius: 330px;
+
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 1.8s ease 0s;
 }
 
-@media (max-width: 650px) {
+.sustainably__image._active img {
+    transform: translate(0px, 0px);
+    opacity: 1;
+}
+
+@media (max-width: 767.98px) {
     .sustainably__title {
         margin: 60px 0px 0px 15px;
         font-size: 40px;
         line-height: 44px;
     }
 
-    .sustainably__image img {
-        opacity: 0.5;
-    }
-
     .sustainably__value {
-        flex-direction: column;
-        justify-content: space-around;
-        min-height: 150px;
-    }
-
-    .sustainably__star {
-        display: none;
-    }
-
-    .sustainably__link {
-        position: static;
-        opacity: 1;
-        max-width: 200px;
-        padding: 10px 150px 10px 15px;
-        align-self: flex-end;
+        flex: 0 0 99.99996%;
+        max-width: 99.99996%;
     }
 
     .sustainably__text {
-        padding: 10px;
+        flex: 0 0 66.66664%;
+        max-width: 66.66664%;
+    }
+
+    .sustainably__link {
+        max-width: 200px;
+        padding: 15px 200px 15px 15px;
+    }
+
+    .sustainably__image img {
+        opacity: 0.5;
+    }
+}
+
+@media (max-width: 550px) {
+    .sustainably__link {
+        padding: 10px 150px 10px 15px;
     }
 }
 
@@ -874,6 +1136,15 @@ body.hasHover .sustainably__star:hover {
     min-height: 100vh;
     margin: 0px 0px 5px 0px;
     border-radius: 15px;
+
+    transform: translate(0px, 20%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.postulates._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
 }
 
 .postulates__background-image {
@@ -934,10 +1205,50 @@ body.hasHover .sustainably__star:hover {
     font-size: 18px;
     line-height: 23px;
     color: #F0F1E6;
+
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.postulates__first-paragraph._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 0.8s ease 0.2s;
 }
 
 .postulates__list-items {
     margin: 25px 0px 0px 40px;
+}
+
+.postulates__list-items li {
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.postulates__list-items._active li:nth-child(1) {
+    transform: translate(0px, 0px);
+    opacity: 0.5;
+    transition: all 0.8s ease 0s;
+}
+
+.postulates__list-items._active li:nth-child(3) {
+    transform: translate(0px, 0px);
+    opacity: 0.5;
+    transition: all 0.8s ease 0.4s;
+}
+
+.postulates__list-items._active li:nth-child(5) {
+    transform: translate(0px, 0px);
+    opacity: 0.5;
+    transition: all 0.8s ease 0.8s;
+}
+
+.postulates__list-items._active li:nth-child(7) {
+    transform: translate(0px, 0px);
+    opacity: 0.5;
+    transition: all 0.8s ease 1.2s;
 }
 
 .postulates__list-item {
@@ -945,35 +1256,37 @@ body.hasHover .sustainably__star:hover {
     display: inline-block;
     font-size: 40px;
     line-height: 40px;
-    opacity: 0.5;
     letter-spacing: 1.08px;
     color: #FFFFFF;
     cursor: pointer;
-    transition: all 0.5s ease 0s;
 }
 
 .postulates__list-item:not(:last-child) {
     margin: 0px 0px 30px 0px;
 }
 
-.postulates__list-item.yellow.active {
+.postulates__list-items._active li:nth-child(1).postulates__list-item.yellow.active {
     color: #EAEAB6;
     opacity: 1;
+    transition: all 0.5s ease 0s;
 }
 
-.postulates__list-item.blue.active {
+.postulates__list-items._active li:nth-child(3).postulates__list-item.blue.active {
     color: rgb(176, 235, 235);
     opacity: 1;
+    transition: all 0.5s ease 0s;
 }
 
-.postulates__list-item.pink.active {
+.postulates__list-items._active li:nth-child(5).postulates__list-item.pink.active {
     color: rgb(224, 188, 170);
     opacity: 1;
+    transition: all 0.5s ease 0s;
 }
 
-.postulates__list-item.gray.active {
+.postulates__list-items._active li:nth-child(7).postulates__list-item.gray.active {
     color: rgb(221, 215, 236);
     opacity: 1;
+    transition: all 0.5s ease 0s;
 }
 
 .postulates__number-item {
@@ -1018,12 +1331,14 @@ body.hasHover .sustainably__star:hover {
     line-height: 22px;
     padding: 0px 50px 0px 0px;
     color: #ffffff;
+
     opacity: 0;
-    transition: all 0.5s ease 0s;
+    transition: all 0.8s ease 0s;
 }
 
-.postulates__second-paragraph.active{
+.postulates__second-paragraph._active.active {
     opacity: 1;
+    transition: all 0.8s ease 0.8s;
 }
 
 .postulates__second-paragraph.yellow {
@@ -1106,6 +1421,15 @@ body.hasHover .sustainably__star:hover {
     border-radius: 15px;
     margin: 0px 0px -20px 0px;
     z-index: 2;
+
+    transform: translate(0px, 20%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.partnership-rules._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
 }
 
 .partnership-rules__container {
@@ -1125,10 +1449,30 @@ body.hasHover .sustainably__star:hover {
 .partnership-rules-text__paragraph {
     line-height: 22px;
     margin: 25px 0px 0px 0px;
+
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.partnership-rules-text__paragraph._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 0.8s ease 0.4s;
 }
 
 .partnership-rules-slider {
     margin: 40px 0px 0px 0px;
+
+    transform: translate(0px, 80%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.partnership-rules-slider._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 0.8s ease 0.4s;
 }
 
 .partnership-rules-slider__slide {
@@ -1191,6 +1535,16 @@ body.hasHover .sustainably__star:hover {
     position: absolute;
     bottom: 142px;
     right: 0px;
+
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.partnership-rules-slider-buttons._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 0.8s ease 0.8s;
 }
 
 .partnership-rules-slider-button-next,
@@ -1217,6 +1571,16 @@ body.hasHover .sustainably__star:hover {
     color: #0D231F;
     border-radius: 42px;
     transition: all 1s ease 0s;
+
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.partnership-rules__link._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 0.8s ease 0.6s;
 }
 
 body.hasHover .partnership-rules__link:hover {
@@ -1265,6 +1629,7 @@ body.hasHover .partnership-rules__link:hover {
     .partnership-rules__link {
         bottom: 50px;
     }
+
     .partnership-rules__link:active {
         bottom: 47px;
     }
@@ -1278,6 +1643,15 @@ body.hasHover .partnership-rules__link:hover {
     height: 500px;
     border-radius: 15px;
     margin: 0px 0px 5px 0px;
+
+    transform: translate(0px, 50%);
+    opacity: 0;
+    transition: all 1.6s ease 0s;
+}
+
+.footer._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
 }
 
 .footer__title {
@@ -1288,13 +1662,25 @@ body.hasHover .partnership-rules__link:hover {
 
 .footer__form {
     position: relative;
+
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.footer__form._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 0.8s ease 0.4s;
 }
 
 .footer__input-email-field {
     font-size: 70px;
     line-height: 86px;
-    max-width: 100%;
-    width: 800px;
+    /* max-width: 100%;
+    width: 800px; */
+    max-width: 800px;
+    width: 100%;
     border: none;
     border-bottom: 1px solid #0D231F;
     background-color: #ECD0C0;
@@ -1344,19 +1730,32 @@ body.hasHover .footer__button-submit:hover {
     max-width: 440px;
     line-height: 22px;
     margin: 30px 0px 0px 0px;
+
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.footer__paragraph._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 0.8s ease 0.4s;
 }
 
 @media (max-width: 991.98px) {
     .footer {
         height: 350px;
     }
+
     .footer__title {
         margin: 80px 0px 0px 0px;
     }
+
     .footer__input-email-field {
         font-size: 56px;
         line-height: 58px;
     }
+
     .footer__button-submit {
         bottom: 10px;
     }
@@ -1366,10 +1765,13 @@ body.hasHover .footer__button-submit:hover {
     .footer__form {
         margin: 20px 0px 0px 0px;
     }
+
     .footer__input-email-field {
         font-size: 36px;
         line-height: 38px;
+        width: 90%;
     }
+
     .footer__button-submit {
         bottom: 5px;
     }
@@ -1377,7 +1779,8 @@ body.hasHover .footer__button-submit:hover {
 
 @media (max-width: 500px) {
     .footer__input-email-field {
-        font-size: 30px;
-        line-height: 38px;
+        font-size: 20px;
+        line-height: 22px;
+        width: 85%;
     }
 }
