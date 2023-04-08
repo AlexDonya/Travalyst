@@ -373,16 +373,15 @@ body {
     transition: all 0.8s ease 0.4s;
 }
 
-.founders-slider-wrapper {
+.founders-slider-global-wrapper {
     transform: translate(0px, 80%);
     opacity: 0;
     transition: all 0.8s ease 0s;
 }
 
-.founders-slider-wrapper._active {
+.founders-slider-global-wrapper._active {
     transform: translate(0px, 0px);
     opacity: 1;
-    /* transition: all 0.8s ease 0.4s; */
 }
 
 .founders-slider {
@@ -440,16 +439,15 @@ body.hasHover .button-next:hover {
 .swiper-button-prev,
 .swiper-button-next {
     position: absolute;
+    top: 32px;
 }
 
 .swiper-button-prev {
     left: -30px;
-    top: 32px;
 }
 
 .swiper-button-next {
     left: 720px;
-    top: 32px;
 }
 
 .founders-slider__image {
@@ -500,16 +498,17 @@ body.hasHover .founders-slider__image:hover {
 }
 
 @media (max-width: 991.98px) {
-    .founders-slider-buttons {
-        top: 500px;
+    .swiper-button-prev,
+    .swiper-button-next {
+        top: 90px;
     }
 
     .swiper-button-prev {
-        left: 550px;
+        left: 600px;
     }
 
     .swiper-button-next {
-        left: 595px;
+        left: 650px;    
     }
 }
 
@@ -948,26 +947,22 @@ body.hasHover .frameworks-slider__slide:hover .frameworks-slider__button::before
     margin: 40px 0px 0px 0px;
 }
 
-.sustainably__rows div {
-    transform: translate(0px, 120%);
+.sustainably__rows span {
     opacity: 0;
     transition: all 0.8s ease 0s;
 }
 
-.sustainably__rows._active div:nth-child(1) {
-    transform: translate(0px, 0px);
+.sustainably__rows._active span:nth-child(1) {
     opacity: 1;
     transition: all 0.8s ease 0.4s;
 }
 
-.sustainably__rows._active div:nth-child(2) {
-    transform: translate(0px, 0px);
+.sustainably__rows._active span:nth-child(2) {
     opacity: 1;
     transition: all 0.8s ease 0.8s;
 }
 
-.sustainably__rows._active div:nth-child(3) {
-    transform: translate(0px, 0px);
+.sustainably__rows._active span:nth-child(3) {
     opacity: 1;
     transition: all 0.8s ease 1.2s;
 }
@@ -1119,7 +1114,7 @@ body.hasHover .sustainably__link a:hover {
     }
 
     .sustainably__image img {
-        opacity: 0.5;
+        opacity: 0.5 !important;
     }
 }
 
@@ -1677,8 +1672,6 @@ body.hasHover .partnership-rules__link:hover {
 .footer__input-email-field {
     font-size: 70px;
     line-height: 86px;
-    /* max-width: 100%;
-    width: 800px; */
     max-width: 800px;
     width: 100%;
     border: none;

@@ -71,8 +71,8 @@ new Swiper('.frameworks-slider', {
 
 
 // section sustainably
-let stars = document.querySelectorAll('.sustainably__star');
-let links = document.querySelectorAll('.sustainably__link');
+const stars = document.querySelectorAll('.sustainably__star');
+const links = document.querySelectorAll('.sustainably__link');
 
 // _______________________________________________________________________________________________
 
@@ -248,7 +248,7 @@ if (animItems.length > 0) {
             const animItem = animItems[i];
             const animItemHeight = animItem.offsetHeight;
             const animItemOffset = offset(animItem).top;
-            const animStart = 20;
+            const animStart = 8;
 
             let animItemPoint = window.innerHeight - animItemHeight / animStart;
 
@@ -275,3 +275,8 @@ if (animItems.length > 0) {
         animOnScroll();
     }, 300);
 }
+
+const partnershipRulesButton = document.querySelector('.partnership-rules__link');
+partnershipRulesButton.addEventListener('mousedown', () => {
+    partnershipRulesButton.style.transitionDelay = '0s';
+})
