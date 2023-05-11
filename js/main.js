@@ -76,66 +76,66 @@ const links = document.querySelectorAll('.sustainably__link');
 
 // _______________________________________________________________________________________________
 
-stars[0].onmouseenter = () => {
-    links[0].style.opacity = 1;
-    links[0].style.pointerEvents = 'auto';
-    links[0].onmouseleave = () => {
-        links[0].style.opacity = 0;
-        links[0].style.pointerEvents = 'none';
-        links[0].onmouseenter = () => {
-            links[0].style.opacity = 0;
-        }
-    }
-};
+// stars[0].onmouseenter = () => {
+//     links[0].style.opacity = 1;
+//     links[0].style.pointerEvents = 'auto';
+//     links[0].onmouseleave = () => {
+//         links[0].style.opacity = 0;
+//         links[0].style.pointerEvents = 'none';
+//         links[0].onmouseenter = () => {
+//             links[0].style.opacity = 0;
+//         }
+//     }
+// };
 
-stars[0].onmouseleave = () => {
-    links[0].style.opacity = 0;
-    links[0].onmouseenter = () => {
-        links[0].style.opacity = 1;
-    }
-};
-
-// _______________________________________________________________________________________________
-
-stars[1].onmouseenter = () => {
-    links[1].style.opacity = 1;
-    links[1].style.pointerEvents = 'auto';
-    links[1].onmouseleave = () => {
-        links[1].style.opacity = 0;
-        links[1].style.pointerEvents = 'none';
-        links[1].onmouseenter = () => {
-            links[1].style.opacity = 0;
-        }
-    }
-};
-
-stars[1].onmouseleave = () => {
-    links[1].style.opacity = 0;
-    links[1].onmouseenter = () => {
-        links[1].style.opacity = 1;
-    }
-};
+// stars[0].onmouseleave = () => {
+//     links[0].style.opacity = 0;
+//     links[0].onmouseenter = () => {
+//         links[0].style.opacity = 1;
+//     }
+// };
 
 // _______________________________________________________________________________________________
 
-stars[2].onmouseenter = () => {
-    links[2].style.opacity = 1;
-    links[2].style.pointerEvents = 'auto';
-    links[2].onmouseleave = () => {
-        links[2].style.opacity = 0;
-        links[2].style.pointerEvents = 'none';
-        links[2].onmouseenter = () => {
-            links[2].style.opacity = 0;
-        }
-    }
-};
+// stars[1].onmouseenter = () => {
+//     links[1].style.opacity = 1;
+//     links[1].style.pointerEvents = 'auto';
+//     links[1].onmouseleave = () => {
+//         links[1].style.opacity = 0;
+//         links[1].style.pointerEvents = 'none';
+//         links[1].onmouseenter = () => {
+//             links[1].style.opacity = 0;
+//         }
+//     }
+// };
 
-stars[2].onmouseleave = () => {
-    links[2].style.opacity = 0;
-    links[2].onmouseenter = () => {
-        links[2].style.opacity = 1;
-    }
-};
+// stars[1].onmouseleave = () => {
+//     links[1].style.opacity = 0;
+//     links[1].onmouseenter = () => {
+//         links[1].style.opacity = 1;
+//     }
+// };
+
+// _______________________________________________________________________________________________
+
+// stars[2].onmouseenter = () => {
+//     links[2].style.opacity = 1;
+//     links[2].style.pointerEvents = 'auto';
+//     links[2].onmouseleave = () => {
+//         links[2].style.opacity = 0;
+//         links[2].style.pointerEvents = 'none';
+//         links[2].onmouseenter = () => {
+//             links[2].style.opacity = 0;
+//         }
+//     }
+// };
+
+// stars[2].onmouseleave = () => {
+//     links[2].style.opacity = 0;
+//     links[2].onmouseenter = () => {
+//         links[2].style.opacity = 1;
+//     }
+// };
 
 
 // section postulates
@@ -276,6 +276,8 @@ if (animItems.length > 0) {
     }, 300);
 }
 
+
+// Remove transition-delay for .partnership-rules__link
 const partnershipRulesButton = document.querySelector('.partnership-rules__link');
 partnershipRulesButton.addEventListener('mousedown', () => {
     partnershipRulesButton.style.transitionDelay = '0s';
